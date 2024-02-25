@@ -1,0 +1,138 @@
+*{
+  font-family: "JetBrainsMonoNerdFont";
+  font-weight: bold;
+  min-height: 0;
+  font-size: 16px;
+  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+  border: none;
+  border-radius: 0;
+}
+
+window#waybar {
+  background-color: rgba(17, 17, 27, 1);
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+
+tooltip {
+  font-family:"JetBrainsMonoNerdFont";
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #1f232b;
+}
+
+tooltip label {
+  padding: 5px;
+}
+
+#workspaces button {
+    padding: 2px;
+    color: #6E6A86;
+    margin-right: 5px;
+}
+   
+#workspaces button.active {
+  color: #ffffff;
+  border-radius: 10px;
+}
+  
+#workspaces button.focused {
+    color: #d8dee9;
+}
+
+#workspaces button.urgent {
+    color: #11111b;
+    border-radius: 10px;
+}
+   
+#workspaces button:hover {
+    color: #9CCFD8;
+    border-radius: 10px;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#network,
+#pulseaudio,
+#tray,
+#bluetooth,
+#workspaces,
+#custom-power,
+
+#idle_inhibitor {
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 2px 10px;
+  background-color: #1e1e32;
+  font-size: 16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+#custom-menu {
+  color: #00ffff;
+  font-size: 22px;
+  padding-left: 10px;
+  padding-right: 15px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+#custom-power {
+  color: #ff6347;
+  padding-left: 12px;
+  padding-right: 15px;
+}
+
+#custom-media {
+  background-color: #1e3232;
+}
+
+#cpu {
+  color: #e4bff2;
+}
+
+#pulseaudio {
+  color: #70e6c2;
+}
+
+#pulseaudio.microphone {
+  color: #ffc0cb;
+}
+
+#network {
+  color: #fff8ce;
+}
+
+#memory {
+  color: #ffd988;
+}
+
+#temperature.critical {
+  background-color: #ff0000;
+}
+
+@keyframes blink {
+  to {
+    color: #000000;
+  }
+}
+
+#taskbar button.active {
+  background-color: #7f849c;
+}
+
+#battery.critical:not(.charging) {
+  color: #f53c3c;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
