@@ -4,18 +4,21 @@
     "spacing": 0,
     "height": 34,
     "modules-left": [
-        "custom/logo"
+        "custom/logo",
+	"cpu",
+        "memory",
+	"temperature"
     ],
     "modules-center": [
         "hyprland/workspaces"
     ],
     "modules-right": [
         "tray",
-	"cpu",
-        "memory",
         "network",
+	"custom/bluetooth",
         "pulseaudio",
-	"pulseaudio.mic",
+	"custom/notifications",
+	"hyprland/language",
 	"clock",
         "custom/power"
     ],
@@ -52,6 +55,11 @@
      "format": "󰍛 {}%",
      "tooltip": false
     },
+    "hyprland/language": {
+    	     "format":"{}",
+             "format-en": "us 🇺🇸",
+             "format-ru": "ru 🇷🇺",      
+    },
     "memory": {
         "format": " {}%"
     },
@@ -66,6 +74,11 @@
     "tray": {
         "spacing": 10
     },
+    "custom/notifications": {
+        "format": "󰂜",
+        "tooltip": false,
+        "on-click": "swaync-client -t -sw"
+    },
     "clock": {
 	"interval": 1,
         "tooltip-format": "<tt>{calendar}</tt>",
@@ -74,11 +87,11 @@
 	"on-click-right": "exec orage"
     },
     "network": {
-        "format-wifi": " {essid} ({signalStrength}%)",
-        "format-ethernet": "󰀂 {ipaddr}/{cidr}",
-        "tooltip-format": "󰀂 {ifname} via {gwaddr}",
-        "format-linked": "󰀂 {ifname} (No IP)",
-        "format-disconnected" : "󰖪",
+        "format-wifi": "{icon} {essid} ({signalStrength}%)",
+	"format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+        "format-ethernet": "󰈀 {ipaddr}/{cidr}",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected" : "󰤮",
 	"tooltip-format-wifi": "{icon} {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
         "tooltip-format-ethernet": "{ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
 	"tooltip-format-disconnected": "Disconnected",
@@ -86,32 +99,36 @@
 	"interval": 5,
 	"nospacing": 1,
     },
+    "custom/bluetooth": {
+        "format": "󰂯",
+        "tooltip": false,
+        "on-click": "blueman-manager"
+    },
     "pulseaudio": {
         "format": "{icon} {volume}% {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": " ",
+        "format-bluetooth": "󰂰 {volume}% {format_source}",
+        "format-bluetooth-muted": "󰂲 {volume}% {format_source}",
+        "format-muted": "󰝟 {volume}% {format_source}",
+        "format-source": "󰍬 {volume}%",
+        "format-source-muted": "󰍭 {volume}%",
         "format-icons": {
-            "headphone": " "  ,
-            "hands-free": " ",
-            "headset": " " ,
-            "phone": " ",
-            "portable": " ",
-            "car": " ",
-            "default": ["","","󰕾",""]
+            "headphone": "󰋋",
+            "hands-free": "󰋎",
+            "headset": "󰋎",
+            "phone": "󰏲",
+            "portable": "󰏲",
+            "default": ["󰕿","󰖀","󰕾"]
         },
         "on-click": "pamixer -t",
         "scroll-step": 1
     },
     "custom/logo": {
-        "format": "  ",
+        "format": "󰣨",
         "tooltip": false,
         "on-click": "wofi --show drun -I"
     },
     "custom/power": {
-        "format": "⏻",
+        "format": "󰤆",
         "tooltip": false,
         "on-click": "/home/alex/.config/waybar/scripts/power.sh"
     }
