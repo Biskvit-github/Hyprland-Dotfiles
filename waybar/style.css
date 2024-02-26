@@ -16,7 +16,7 @@ window#waybar {
 
 
 tooltip {
-  font-family:"JetBrainsMonoNerdFont";
+  font-family:"JetBrainsMonoNerdFonta";
   border-radius: 10px;
   padding: 15px;
   background-color: #1f232b;
@@ -51,16 +51,19 @@ tooltip label {
     border-radius: 10px;
 }
 
-#clock,
-#battery,
+
+#custom-logo,
 #cpu,
 #memory,
 #temperature,
-#network,
-#pulseaudio,
 #tray,
-#bluetooth,
-#workspaces,
+#network,
+#custom-bluetooth,
+#pulseaudio,
+#custom-notifications,
+#language,
+#clock,
+#workplaces,
 #custom-power,
 
 #idle_inhibitor {
@@ -82,6 +85,20 @@ tooltip label {
   padding-right: 15px;
   padding-top: 0px;
   padding-bottom: 0px;
+}
+
+#hyprland-language {
+}
+
+#custom-bluetooth {
+  color: #85c0ff
+}
+
+#custom-notifications {
+  color: #ffb366
+}
+
+#custom-logo {
 }
 
 #custom-power {
